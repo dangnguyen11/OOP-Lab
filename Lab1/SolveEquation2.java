@@ -8,7 +8,6 @@ public class SolveEquation2 {
 	        double b1 = input.nextDouble();
 	        System.out.print("Enter c: ");
 	        double c1 = input.nextDouble();
-	//abc
 	        System.out.print("Enter d: ");
 	        double a2 = input.nextDouble();
 	        System.out.print("Enter e: ");
