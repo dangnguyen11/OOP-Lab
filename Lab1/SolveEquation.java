@@ -9,7 +9,6 @@ public class SolveEquation{
 
         System.out.print("Enter b: ");
         double b = input.nextDouble();
-//ab
         if(a==0 && b==0)
         {
             System.out.print("Infinite solution");
