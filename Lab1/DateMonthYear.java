@@ -2,70 +2,71 @@ import java.util.Scanner;
 
 public class DateMonthYear {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int monthNumber;
-        String monthInput;
-        int year;
+        try (Scanner scanner = new Scanner(System.in)) {
+			int monthNumber;
+			String monthInput;
+			int year;
 
-        while (true) {
-            System.out.print("Enter the month : ");
-            monthInput = scanner.nextLine().toLowerCase();
+			while (true) {
+			    System.out.print("Enter the month : ");
+			    monthInput = scanner.nextLine().toLowerCase();
 
-            if (monthInput.matches("january?|1")) {
-                monthNumber = 1;
-                break;
-            } else if (monthInput.matches("february?|2")) {
-                monthNumber = 2;
-                break;
-            } else if (monthInput.matches("march?|3")) {
-                monthNumber = 3;
-                break;
-            } else if (monthInput.matches("april?|4")) {
-                monthNumber = 4;
-                break;
-            } else if (monthInput.matches("may?|5")) {
-                monthNumber = 5;
-                break;
-            } else if (monthInput.matches("june?|6")) {
-                monthNumber = 6;
-                break;
-            } else if (monthInput.matches("july?|7")) {
-                monthNumber = 7;
-                break;
-            } else if (monthInput.matches("august?|8")) {
-                monthNumber = 8;
-                break;
-            } else if (monthInput.matches("september?|9")) {
-                monthNumber = 9;
-                break;
-            } else if (monthInput.matches("october?|10")) {
-                monthNumber = 10;
-                break;
-            } else if (monthInput.matches("november?|11")) {
-                monthNumber = 11;
-                break;
-            } else if (monthInput.matches("december?|12")) {
-                monthNumber = 12;
-                break;
-            } else {
-                System.out.println("Invalid month input. Please try again.");
-            }
-        }
+			    if (monthInput.matches("january?|1")) {
+			        monthNumber = 1;
+			        break;
+			    } else if (monthInput.matches("february?|2")) {
+			        monthNumber = 2;
+			        break;
+			    } else if (monthInput.matches("march?|3")) {
+			        monthNumber = 3;
+			        break;
+			    } else if (monthInput.matches("april?|4")) {
+			        monthNumber = 4;
+			        break;
+			    } else if (monthInput.matches("may?|5")) {
+			        monthNumber = 5;
+			        break;
+			    } else if (monthInput.matches("june?|6")) {
+			        monthNumber = 6;
+			        break;
+			    } else if (monthInput.matches("july?|7")) {
+			        monthNumber = 7;
+			        break;
+			    } else if (monthInput.matches("august?|8")) {
+			        monthNumber = 8;
+			        break;
+			    } else if (monthInput.matches("september?|9")) {
+			        monthNumber = 9;
+			        break;
+			    } else if (monthInput.matches("october?|10")) {
+			        monthNumber = 10;
+			        break;
+			    } else if (monthInput.matches("november?|11")) {
+			        monthNumber = 11;
+			        break;
+			    } else if (monthInput.matches("december?|12")) {
+			        monthNumber = 12;
+			        break;
+			    } else {
+			        System.out.println("Invalid month input. Please try again.");
+			    }
+			}
 
-        while (true) {
-            System.out.print("Enter the year (non-negative number): ");
-            if (scanner.hasNextInt()) {
-                year = scanner.nextInt();
-                if (year >= 0) {
-                    break;
-                }
-            }
-            scanner.nextLine(); // clear input buffer
-            System.out.println("Invalid year input. Please enter a non-negative number.");
-        }
+			while (true) {
+			    System.out.print("Enter the year (non-negative number): ");
+			    if (scanner.hasNextInt()) {
+			        year = scanner.nextInt();
+			        if (year >= 0) {
+			            break;
+			        }
+			    }
+			    scanner.nextLine(); // clear input buffer
+			    System.out.println("Invalid year input. Please enter a non-negative number.");
+			}
 
-        int daysInMonth = getDaysInMonth(monthNumber, year);
-        System.out.println("Number of days in " + getMonthName(monthNumber) + " " + year + " is: " + daysInMonth);
+			int daysInMonth = getDaysInMonth(monthNumber, year);
+			System.out.println("Number of days in " + getMonthName(monthNumber) + " " + year + " is: " + daysInMonth);
+		}
     }
 
     private static int getDaysInMonth(int month, int year) {
